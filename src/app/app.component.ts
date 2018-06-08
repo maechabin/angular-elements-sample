@@ -7,7 +7,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class AppComponent  {
   @Input() name: string;
-  @Output() clickButton: EventEmitter<String> = new EventEmitter();
+  @Output() clickButton: EventEmitter<string> = new EventEmitter();
   value: string;
 
   handleClick() {
