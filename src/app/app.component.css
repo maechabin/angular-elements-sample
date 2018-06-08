@@ -1,0 +1,10 @@
+:host {
+  display: block;
+  border: 1px solid black;
+}
+
+div {
+  padding: 16px;
+  text-align: center;
+  font-family: Lato;
+}
