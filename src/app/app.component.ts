@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, HostListener, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-hello',
@@ -6,9 +6,17 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
+  value: string;
+
   @Input() name: string;
   @Output() clickButton: EventEmitter<string> = new EventEmitter();
-  value: string;
+  @HostBinding('style.background-color') color = 'white';
+  @HostListener('mouseover') onclick() {
+    this.color = '#eee';
+  }
+  @HostListener('mouseout') onmouseout() {
+    this.color = 'white';
+  }
 
   handleClick() {
     this.clickButton.emit(this.value);
