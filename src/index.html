@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <app-hello name="Angular Elements!">loading</app-hello>
+  <app-root name="Angular Elements!">loading</app-root>
 
   <script>
-    const appHello = document.querySelector('app-hello');
+    const appHello = document.querySelector('app-root');
     appHello.addEventListener('clickButton', (e) => {
       console.log(e.detail);
       appHello.setAttribute('name', e.detail);
