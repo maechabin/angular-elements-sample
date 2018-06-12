@@ -1,10 +1,35 @@
 :host {
+  margin: 80px;
   display: block;
-  border: 1px solid black;
+  font-family: Poppins, "Hiragino Sans", "Hiragino Kaku Gothic ProN",  Meiryo,  sans-serif;
+  font-weight: var(--weight-regular);
+  box-shadow: 0 0 8px  #666;
+}
+
+h1 {
+  font-family: Poppins, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  color: #1976d2;
+  font-size: 56px;
 }
 
 div {
-  padding: 16px;
+  padding: 24px;
   text-align: center;
-  font-family: Lato;
+}
+
+input {
+  border: 2px solid #333;
+  font-size: 16px;
+  padding: 2px;
+  vertical-align: middle;
+}
+
+button {
+  background-color: #1976d2;
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  vertical-align: middle;
 }
