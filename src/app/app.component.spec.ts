@@ -26,13 +26,13 @@ describe('AppComponent', () => {
     component = fixture.componentInstance;
   });
 
-  it('should create the app', async(() => {
+  it('should create the app', () => {
     expect(component).toBeTruthy();
-  }));
+  });
 
-  it('should call customElements.difine', async(() => {
+  it('should call customElements.difine', () => {
     expect(definedSpy).toHaveBeenCalledWith('app-hello', jasmine.anything());
-  }));
+  });
 });
 
 @NgModule({
