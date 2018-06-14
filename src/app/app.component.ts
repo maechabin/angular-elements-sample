@@ -6,7 +6,7 @@ import { HelloComponent } from './hello/hello.component';
   selector: 'app-hello',
   template: ``,
 })
-export class AppComponent  {
+export class AppComponent {
   constructor(
     private injector: Injector,
   ) {

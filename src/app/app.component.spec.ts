@@ -1,27 +1,43 @@
-import { TestBed, async } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { HelloComponent } from './hello/hello.component';
+
 describe('AppComponent', () => {
+  let fixture: ComponentFixture<AppComponent>;
+  let component: AppComponent;
+  let definedSpy: jasmine.Spy;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        FakeTestModule,
+      ],
       declarations: [
-        AppComponent
+        AppComponent,
       ],
     }).compileComponents();
   }));
+
+  beforeEach(() => {
+    definedSpy = spyOn(window.customElements, 'define');
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+  });
+
   it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   }));
-  it(`should have as title 'app'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app');
-  }));
-  it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to angular-elements-sample!');
+
+  it('should call customElements.difine', async(() => {
+    expect(definedSpy).toHaveBeenCalledWith('app-hello', jasmine.anything());
   }));
 });
+
+@NgModule({
+  imports: [FormsModule],
+  declarations: [HelloComponent],
+  entryComponents: [HelloComponent]
+})
+export class FakeTestModule { }
