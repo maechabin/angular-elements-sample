@@ -26,20 +26,20 @@ describe('HelloComponent', () => {
     component = fixture.componentInstance;
   });
 
-  it('should create the app', async(() => {
+  it('should create the app', () => {
     expect(component).toBeTruthy();
-  }));
+  });
 
-  it('should render title in a h1 tag', async(() => {
+  it('should render title in a h1 tag', () => {
     component.name = 'Angular';
     fixture.detectChanges();
     de = fixture.debugElement.query(By.css('h1'));
     console.log(de);
     expect(de.nativeElement.textContent).toContain('Hello Angular!');
-  }));
+  });
 
   it('should make handleClick fire', () => {
-    const spy = spyOn(component, 'handleClick');
+    const spy: jasmine.Spy = spyOn(component, 'handleClick');
     const debugElement = fixture.debugElement.query(By.css('button'));
     debugElement.nativeElement.click();
     expect(spy).toHaveBeenCalled();
@@ -48,7 +48,7 @@ describe('HelloComponent', () => {
   it('should make hadleclick work correctly', () => {
     const expected = 'Angular';
     component.value = expected;
-    const spy = spyOn(component.clickButton, 'emit');
+    const spy: jasmine.Spy = spyOn(component.clickButton, 'emit');
     component.handleClick();
     expect(spy).toHaveBeenCalledWith(expected);
     expect(component.value).toBe('');
