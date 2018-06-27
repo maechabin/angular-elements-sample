@@ -1,20 +1,29 @@
-import { Component, Input, Output, EventEmitter, HostListener, HostBinding } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  HostListener,
+  HostBinding,
+} from '@angular/core';
 
 @Component({
   selector: 'app-hello',
   templateUrl: './hello.component.html',
-  styleUrls: [ './hello.component.css' ]
+  styleUrls: ['./hello.component.css'],
 })
-export class HelloComponent  {
+export class HelloComponent {
   value: string;
 
   @Input() name: string;
   @Output() clickButton: EventEmitter<string> = new EventEmitter();
   @HostBinding('style.background-color') color = 'white';
-  @HostListener('mouseover') onclick() {
+  @HostListener('mouseover')
+  onclick() {
     this.color = '#eee';
   }
-  @HostListener('mouseout') onmouseout() {
+  @HostListener('mouseout')
+  onmouseout() {
     this.color = 'white';
   }
 

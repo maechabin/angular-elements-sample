@@ -11,12 +11,8 @@ describe('AppComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        FakeTestModule,
-      ],
-      declarations: [
-        AppComponent,
-      ],
+      imports: [FakeTestModule],
+      declarations: [AppComponent],
     }).compileComponents();
   }));
 
@@ -38,6 +34,6 @@ describe('AppComponent', () => {
 @NgModule({
   imports: [FormsModule],
   declarations: [HelloComponent],
-  entryComponents: [HelloComponent]
+  entryComponents: [HelloComponent],
 })
-export class FakeTestModule { }
+export class FakeTestModule {}

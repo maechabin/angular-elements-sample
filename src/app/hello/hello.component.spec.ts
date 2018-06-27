@@ -12,12 +12,8 @@ describe('HelloComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        FormsModule,
-      ],
-      declarations: [
-        HelloComponent
-      ],
+      imports: [FormsModule],
+      declarations: [HelloComponent],
     }).compileComponents();
   }));
 

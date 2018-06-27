@@ -7,10 +7,10 @@ import { HelloComponent } from './hello/hello.component';
   template: ``,
 })
 export class AppComponent {
-  constructor(
-    private injector: Injector,
-  ) {
-    const AppHelloElement = createCustomElement(HelloComponent, { injector: this.injector });
+  constructor(private injector: Injector) {
+    const AppHelloElement = createCustomElement(HelloComponent, {
+      injector: this.injector,
+    });
     customElements.define('app-hello', AppHelloElement);
   }
 }

@@ -1,13 +1,15 @@
 :host {
   margin: 80px;
   display: block;
-  font-family: Poppins, "Hiragino Sans", "Hiragino Kaku Gothic ProN",  Meiryo,  sans-serif;
+  font-family: Poppins, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo,
+    sans-serif;
   font-weight: var(--weight-regular);
-  box-shadow: 0 0 8px  #666;
+  box-shadow: 0 0 8px #666;
 }
 
 h1 {
-  font-family: Poppins, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-family: Poppins, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo,
+    sans-serif;
   color: #1976d2;
   font-size: 56px;
 }
